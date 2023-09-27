@@ -1,15 +1,15 @@
 import React, {useState} from 'react';
 import axios from "axios"
+import {login} from "../services.js/auth"
 
 function Login() {
-    const [email, setEmail] = useState("")
+    const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
     
     const handleSubmit = async (e) => {
         e.preventDefault();
         try{
-            const response =await axios.post('/api/v1/users/login', email, password);
-            const {token} = response.data
+            const {token} = await login(username, password)
         } catch (error){
             console.error('Login failed', error)
         }
@@ -18,13 +18,13 @@ function Login() {
         <div>
             <h1>Login</h1>
             <form onSubmit={handleSubmit}>
-                <label htmlFor="email">Email:
+                <label htmlFor="username">Username:
                 </label>
                 <input
-                    type="email"
-                    id="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
+                    type="username"
+                    id="username"
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)}
                     required
                 />
                 <label htmlFor="password">Password:</label>
