@@ -1,7 +1,10 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useEffect, useState} from 'react'
+import { BrowserRouter as Router, Route, Routes, useParams } from 'react-router-dom';
+import Login from ./pages/Login
 
 function App() {
+  const baseURL = process.env.REACT_APP_BASE_URL
+  console.log(baseURL)
   return (
     <div className="App">
       <header className="App-header">
