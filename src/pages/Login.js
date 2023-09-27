@@ -1,48 +1,41 @@
 import React, {useState} from 'react';
-import axios from axios
+import axios from "axios"
 
 function Login() {
-    const [loginData, setLoginData] = useState({
-        email: '',
-        password: '',
-    })
-    const handleChange = (e) => {
-        const {name, value} = e.target;
-        setLoginData({...loginData, [name]: value})
-    }
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
+    
     const handleSubmit = async (e) => {
         e.preventDefault();
         try{
-            const response =await axios.post('/api/v1/users/login', loginData);
+            const response =await axios.post('/api/v1/users/login', email, password);
             const {token} = response.data
         } catch (error){
-            console.error('Lopgin failed', error)
+            console.error('Login failed', error)
         }
     }
     return(
         <div>
             <h1>Login</h1>
             <form onSubmit={handleSubmit}>
-                <label htrmlFor="email">Email:
+                <label htmlFor="email">Email:
                 </label>
                 <input
                     type="email"
                     id="email"
-                    name="email"
-                    value={loginData.email}
-                    onchange={handleInputChange}
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                     required
                 />
-                <label htmlFor="passsword">Password:</label>
+                <label htmlFor="password">Password:</label>
                 <input
                 type="password"
                 id="password"
-                name="password"
-                value={loginData.password}
-                onChange={handleInputChange}
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
                 required
                 />
-                <button tpy="submit">Login</button>
+                <button type="submit">Login</button>
             </form>
         </div>
     )
