@@ -10,6 +10,7 @@ export const login = async (username, password) => {
             password,
         })
         const token = response.data
+        localStorage.setItem('token', token)
         return token;
     } catch (error) {
         console.error('Login failed', error)
@@ -30,3 +31,8 @@ export const register = async (email, username, password) => {
     }
 }
 
+
+export const clearToken = () => {
+    localStorage.removeItem("token")
+}
+    
