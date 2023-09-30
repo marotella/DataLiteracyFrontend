@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Routes, useParams } from 'react-router-
 import Home from './pages/HomePage'
 import Login from './pages/Login'
 import Register from "./pages/Register"
-
+import Logout from "./components/Logout"
 function App() {
   const baseURL = process.env.REACT_APP_BASE_URL
   console.log(baseURL)

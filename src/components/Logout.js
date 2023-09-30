@@ -1,15 +1,15 @@
 import React from 'react';
-import {useHistory} from "react-router-dom"
+import {useNavigate} from "react-router-dom"
 import { clearToken } from '../services.js/auth';
 const baseURL = process.env.REACT_APP_BASE_URL
 
 
 const Logout = () => {
-    const history = useHistory()
-
+    const navigate = useNavigate()
     const handleLogout = () => {
         clearToken()
-        history.push(`${baseURL}/users/login`)
+        console.log("Logout successful")
+        navigate(`/users/login`)
     }
     return (
         <div>

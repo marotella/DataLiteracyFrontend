@@ -10,6 +10,7 @@ function Login() {
         e.preventDefault();
         try{
             const {token} = await login(username, password)
+            console.log("Login successful")
         } catch (error){
             console.error('Login failed', error)
         }
