@@ -1,6 +1,6 @@
 import axios from "axios"
-
 const baseURL = process.env.REACT_APP_BASE_URL
+
 
 
 export const login = async (username, password) => {
@@ -9,8 +9,10 @@ export const login = async (username, password) => {
             username,
             password,
         })
-        const token = response.data
-        localStorage.setItem('token', token)
+        const token = response.data.access_token
+        console.log('Received token:', token); // Log the token
+        localStorage.setItem('token', token.toString()); // Convert to string
+        console.log(token)
         return token;
     } catch (error) {
         console.error('Login failed', error)
@@ -37,5 +39,7 @@ export const clearToken = () => {
 }
     
 export const getToken = () => {
-    return localStorage.getItem("token");
+    const token = localStorage.getItem("token");
+    console.log("Token:", token); // Log the token for debugging
+    return token ? `${token.toString()}` : null; // Ensure it's returned as a string or null
 }
