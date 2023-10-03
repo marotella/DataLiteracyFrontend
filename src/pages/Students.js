@@ -6,14 +6,15 @@ import {getAllStudents} from "../services.js/api"
 import {getToken} from "../services.js/auth"
 const Students = () => {
     const {id} = useParams()
-    const [students, setStudents] = useState()
+    const [students, setStudents] = useState([])
     const [loading, setLoading] = useState(true)
     useEffect(() => {
         const fetchStudentData = async () => {
             try{
-                const studentData = await getAllStudents()
-                setStudents(studentData)
-                setLoading(false)
+              const response = await getAllStudents()
+              const studentData = response.data
+              setStudents(studentData)
+              setLoading(false)
             } catch (error){
                 console.error("Error retrieving data", error)
                 throw error

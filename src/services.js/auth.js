@@ -41,5 +41,5 @@ export const clearToken = () => {
 export const getToken = () => {
     const token = localStorage.getItem("token");
     console.log("Token:", token); // Log the token for debugging
-    return token ? `${token.toString()}` : null; // Ensure it's returned as a string or null
+    return token ? `Bearer ${token}` : null; // Ensure it's returned as a string or null
 }
