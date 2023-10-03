@@ -23,3 +23,22 @@ export const getAllStudents = async () => {
     
 }
 
+export const createNewStudent = async (studentData) => {
+    const token = getToken()
+    console.log(token)
+        try{
+            const response = await axios.post(`${baseURL}api/v1/students/create`, studentData,
+            {
+                headers:{
+                    Authorization: token,
+                },
+                withCredentials: true
+            })
+            const newStudent = response.data
+            console.log('Created student:', newStudent)
+            return newStudent
+        } catch (error){
+            console.error("Error creating student:", error)
+            throw error
+        }
+}

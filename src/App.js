@@ -6,6 +6,7 @@ import Register from "./pages/Register"
 import Logout from "./components/Logout"
 import Students from "./pages/Students"
 import StudentInfo from "./components/StudentInfo"
+import NewStudent from "./pages/NewStudent"
 function App() {
   const baseURL = process.env.REACT_APP_BASE_URL
   console.log(baseURL)
@@ -17,6 +18,7 @@ function App() {
         <Route path="/users/login" element={<Login baseURL={baseURL}/>}/>
         <Route path="/users/register" element={<Register baseURL={baseURL}/>}/>
         <Route path="/students" element={<Students baseURL={baseURL}/>}/>
+        <Route path="/students/new" element={<NewStudent baseURL={baseURL}/>}/>
         <Route path="/students/:id" element={<StudentInfo baseURL={baseURL}/>}/>
       </Routes>
     </div>

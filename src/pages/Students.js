@@ -14,6 +14,7 @@ const Students = () => {
               const response = await getAllStudents()
               const studentData = response.data
               setStudents(studentData)
+              console.log(students)
               setLoading(false)
             } catch (error){
                 console.error("Error retrieving data", error)
