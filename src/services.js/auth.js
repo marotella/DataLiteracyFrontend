@@ -27,6 +27,8 @@ export const register = async (email, username, password) => {
             username,
             password,
         })
+        console.log('Registration response:', response)
+
     } catch (error) {
         console.error('Registration failed.', error)
         throw error
