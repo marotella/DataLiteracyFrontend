@@ -6,7 +6,7 @@ export const getAllStudents = async () => {
     const token = getToken()
     console.log(token)
         try{
-            const response = await axios.get(`${baseURL}api/v1/students/getall`, {
+            const response = await axios.get(`${baseURL}api/v1/students/`, {
             headers:{
                 Authorization: token
             },

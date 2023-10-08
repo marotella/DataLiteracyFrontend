@@ -19,7 +19,6 @@ const Students = () => {
             } catch (error){
                 console.error("Error retrieving data", error)
                 throw error
-                setLoading(false)
             }
 
         }
