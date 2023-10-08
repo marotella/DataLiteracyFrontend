@@ -25,7 +25,6 @@ function Register(){
                 id="email"
                 value={email}
                 onChange={(e)=> setEmail(e.target.value)}
-                reqiured
             />
             <label htmlFor="username">Username: </label>
             <input
@@ -33,7 +32,6 @@ function Register(){
                     id="username"
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}
-                    required
                 />
                 <label htmlFor="password">Password:</label>
                 <input
@@ -41,7 +39,6 @@ function Register(){
                 id="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                required
                 />
                 <button type="submit">Register</button>
                 </form>

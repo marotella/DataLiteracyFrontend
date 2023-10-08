@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import axios from "axios"
 import { createNewStudent } from '../services.js/api'
 function CreateStudent() {
-    const [studentId, setStudentId] = useState("")
+    const [studentID, setStudentID] = useState("")
     const [firstName, setFirstName] = useState("")
     const [lastName, setLastName] = useState("")
     const [iep, setIep] = useState(false)
@@ -15,7 +15,7 @@ function CreateStudent() {
         e.preventDefault();
         try {
             const studentData = {
-                studentId,
+                studentID : studentID,
                 firstName,
                 lastName,
                 iep,
@@ -24,6 +24,7 @@ function CreateStudent() {
                 decodingScore,
                 encodingScore,
               };
+            console.log(studentData)
             await createNewStudent(studentData)
         } catch (error) {
             console.error('Registration failed', error)
@@ -34,8 +35,8 @@ function CreateStudent() {
             <h2>Create Student</h2>
             <form onSubmit={handleSubmit}>
                 <div>
-                    <label htmlFor="studentId">Student ID:</label>
-                    <input type="number" id="studentId" value={studentId} onChange={(e) => setStudentId(e.target.value)}/>
+                    <label htmlFor="studentID">Student ID:</label>
+                    <input type="number" id="studentId" value={studentID} onChange={(e) => setStudentID(e.target.value)}/>
                 </div>
                 <div>
                     <label htmlFor="firstName">First Name:</label>
