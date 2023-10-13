@@ -42,3 +42,24 @@ export const createNewStudent = async (studentData) => {
             throw error
         }
 }
+
+export const createNewCriteria = async (criteriaData) => {
+    const token = getToken()
+    console.log(token)
+    try{
+        const response = await axios.post(`${baseURL}api/v1/criteria`,
+        criteriaData,
+        {
+            hraders:{
+                Authorization: token,
+            },
+            withCredentials: true
+        })
+        const newCritieria = response.data
+        console.log(newCriteria)
+        return newCritieria
+    } catch (error){
+        console.error("Error creating criteria", error)
+        throw error
+    }
+}
