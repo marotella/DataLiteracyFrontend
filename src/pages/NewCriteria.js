@@ -59,7 +59,12 @@ function CreateCriteria() {
                     <label htmlFor="encodingScoreMax">Maximum Encoding Score:</label>
                     <input type="number" id='encodingScoreMax' value={encodingScoreMax} onChange={(e) => setEncodingScoreMax(e.target.value)}/>
                 </div>
+                <div>
+                    <button type="submit">Create</button>
+                </div>
             </form>
         </div>
     )
 }
+
+export default CreateCriteria

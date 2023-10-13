@@ -7,6 +7,7 @@ import Logout from "./components/Logout"
 import Students from "./pages/Students"
 import StudentInfo from "./components/StudentInfo"
 import NewStudent from "./pages/NewStudent"
+import CreateCriteria from './pages/NewCriteria';
 function App() {
   const baseURL = process.env.REACT_APP_BASE_URL
   console.log(baseURL)
@@ -20,6 +21,7 @@ function App() {
         <Route path="/students" element={<Students baseURL={baseURL}/>}/>
         <Route path="/students/new" element={<NewStudent baseURL={baseURL}/>}/>
         <Route path="/students/:id" element={<StudentInfo baseURL={baseURL}/>}/>
+        <Route path="/criteria/new" element={<CreateCriteria baseURL={baseURL}/>}/>
       </Routes>
     </div>
   </Router>
