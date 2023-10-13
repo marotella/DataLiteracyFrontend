@@ -43,6 +43,22 @@ function CreateCriteria() {
                     <label htmlFor="screenerScoreMax">Maximum Screener Score:</label>
                     <input type="number" id='screenerScoreMax' value={screenerScoreMax} onChange={(e) => setScreenerScoreMax(e.target.value)}/>
                 </div>
+                <div>
+                    <label htmlFor="decodingScoreMin">Minimum Decoding Score:</label>
+                    <input type="number" id='decodingScoreMin' value={decodingScoreMin} onChange={(e) => setDecodingScoreMin(e.target.value)}/>
+                </div>
+                <div>
+                    <label htmlFor="decoding">Maximum Decoding Score:</label>
+                    <input type="number" id='decodingScoreMax' value={decodingScoreMax} onChange={(e) => setDecodingScoreMax(e.target.value)}/>
+                </div>
+                <div>
+                    <label htmlFor="encodingScoreMin">Minimum Encoding Score:</label>
+                    <input type="number" id='encodingScoreMin' value={encodingScoreMin} onChange={(e) => setEncodingScoreMin(e.target.value)}/>
+                </div>
+                <div>
+                    <label htmlFor="encodingScoreMax">Maximum Encoding Score:</label>
+                    <input type="number" id='encodingScoreMax' value={encodingScoreMax} onChange={(e) => setEncodingScoreMax(e.target.value)}/>
+                </div>
             </form>
         </div>
     )
