@@ -55,9 +55,9 @@ export const createNewCriteria = async (criteriaData) => {
             },
             withCredentials: true
         })
-        const newCritieria = response.data
+        const newCriteria = response.data
         console.log(newCriteria)
-        return newCritieria
+        return newCriteria
     } catch (error){
         console.error("Error creating criteria", error)
         throw error
