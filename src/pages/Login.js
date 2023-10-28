@@ -17,7 +17,8 @@ function Login() {
     }
     return(
         <div>
-            <h1>Login</h1>
+            <h1>Log In</h1>
+            <h3>Enter your username and password in the fields below to get started.</h3>
             <form onSubmit={handleSubmit}>
                 <label htmlFor="username">Username:
                 </label>
