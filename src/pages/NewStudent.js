@@ -33,6 +33,7 @@ function CreateStudent() {
     return (
         <div>
             <h2>Create Student</h2>
+            <h3>Enter student information below. If you wish to update an exisiting students data please use the student update data.</h3>
             <form onSubmit={handleSubmit}>
                 <div>
                     <label htmlFor="studentID">Student ID:</label>
