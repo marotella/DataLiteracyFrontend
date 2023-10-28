@@ -30,6 +30,7 @@ function CreateCriteria() {
     return (
         <div>
             <h2>Create Intervention Criteria</h2>
+            <h3>Enter intervention  criteria below. Criteria are used to analyze the data for best fit interventions. If you wish to update an exisiting intervention's criteria data please use the criteria update form.</h3>
             <form onSubmit = {handleSubmit}>
                 <div>
                     <label htmlFor="interventionName">Intervention:</label>
