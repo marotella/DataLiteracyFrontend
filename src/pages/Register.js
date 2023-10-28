@@ -19,6 +19,7 @@ function Register(){
         <div>
             <form onSubmit={handleSubmit}> 
             <h1>Register</h1>
+            <h3>Please register your information with Data Literacy to get started. If you need to log in please go to the log in page.</h3>
             <label htmlFor="email">Email: </label>
             <input
                 type="email"

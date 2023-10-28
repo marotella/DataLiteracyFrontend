@@ -30,6 +30,7 @@ const Students = () => {
               <div>Loading...</div>
             ) : (
               <div>
+                <h2>Student Data</h2>
                 {students.map((student) => (
                   <StudentInfo key={student.id} student={student} />
                 ))}
