@@ -63,3 +63,23 @@ export const createNewCriteria = async (criteriaData) => {
         throw error
     }
 }
+
+export const getAllCriteria = async () => {
+    const token = getToken()
+    console.log(token)
+    try{
+        const response = await axios get(`${baseURL}api/v1/criteria/`, {
+            headers:{
+                Authorization: token,
+            },
+            withCredentials: true
+            })
+            const criteria = response.data
+            console.log(criteria)
+            return criteria
+        
+        } catch (error){
+            console.error("Error fetching criteria", error)
+            throw error
+        }
+    }
